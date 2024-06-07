@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure full height */
-    background: url('image\background.png') no-repeat center center fixed, rgba(130, 130, 80, 0.24); /* Change color here (rgba) */
+    background: url('image/background.png') no-repeat center center fixed, rgba(130, 130, 80, 0.24); /* Change color here (rgba) */
     background-blend-mode: overlay; /* Blend mode to combine image and color */
     background-size: cover;
     z-index: -1; /* Ensure it stays behind the content */
