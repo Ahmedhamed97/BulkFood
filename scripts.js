@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("DOM fully loaded and parsed");
+
     const colorThief = new ColorThief();
     const products = document.querySelectorAll('.product-card');
 
@@ -16,6 +17,35 @@ document.addEventListener("DOMContentLoaded", function() {
                 applyBackgroundColor(img, product);
             });
         }
+
+        // Add hover event listeners for desktop/tablet
+        product.addEventListener('mouseenter', function() {
+            if (!product.classList.contains('active')) {
+                product.classList.add('active');
+            }
+        });
+
+        product.addEventListener('mouseleave', function() {
+            if (product.classList.contains('active')) {
+                product.classList.remove('active');
+            }
+        });
+
+        // Add touch event listener for mobile
+        let isTouched = false;
+        product.addEventListener('touchstart', function(event) {
+            event.preventDefault(); // Prevent default touch behavior (e.g., scrolling)
+            console.log("Product touched:", product);
+
+            if (!isTouched) {
+                products.forEach(p => p.classList.remove('active')); // Remove 'active' from all
+                product.classList.add('active'); // Add 'active' to the touched product
+                isTouched = true;
+            } else {
+                product.classList.remove('active'); // Toggle back to original size
+                isTouched = false;
+            }
+        });
     });
 
     function applyBackgroundColor(img, product) {
