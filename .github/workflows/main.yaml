@@ -1,0 +1,5 @@
+on:
+  push:
+    branches:
+      - index  # or your branch name
+  workflow_dispatch:
