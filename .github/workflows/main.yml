@@ -1,4 +1,5 @@
 on:
   push:
     branches:
-      - index  # or your deployment branch
+      - index  # Replace with your branch name if different
+  workflow_dispatch:
