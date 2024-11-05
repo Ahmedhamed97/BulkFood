@@ -1,0 +1,4 @@
+on:
+  push:
+    branches:
+      - index  # or your deployment branch
